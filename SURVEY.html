@@ -1,0 +1,151 @@
+<html>
+<head>
+<title> Survey about School Life </title>
+<style>
+
+.dayofbirth {
+cursor:pointer;
+}
+
+.option {
+background-color: #FFFFE0;
+cursor: pointer;
+border-color: #DFA01A;
+transition-duration; 0.5s;
+font-family: 'Arial', sans-serif;
+font-size: 30px;
+}
+
+.option:hover {
+background-color: #ffffff;
+}
+
+body{
+background-color: #EDD308;
+text-align: center;
+font-family: 'Arial', sans-serif;
+font-weight: 200;
+font-size: 50px;
+}
+
+#pindot{
+position: fixed;
+background-color: #FFFFE0;
+cursor: pointer;
+}
+
+footer{
+text-align: center;
+padding: 4px;
+background-color: #FFF2C2;
+color: black;
+font-size: small;
+}
+
+
+</style>
+<body>
+<center>
+<button onclick="button()" id="pindot" title="Top" style="display: none;">Top</button>
+<form>
+<fieldset>
+<legend>Personal Information</legend>
+Full Name
+<input type= "text" id="pangalan" name="pangalan" placeholder="ex. Juan Dela Cruz">
+<br>
+Grade & Section
+<input type="text"  id="seksyon" name="seksyon" placeholder="ex. 8-Pearl" >
+<label for="kaarawan">Birthday</label>
+<input type="date" id="kaarawan" name="kaarawan" class="kaarawan" >
+</fieldset>
+<h3> Please Answer all the Questions Truthfully. Thanks! :) </h3>
+<br>
+<br>
+<br>
+1. What is your overall experience this school year?
+<select id="sy" class="option" name="sy">
+<br>
+<option value="Traumatizing">Traumatizing</option>
+<option value="Below Average">Below Average</option>
+<option value="Meh">Meh</option>
+<option value="Good">Good</option>
+<option value="Memorable">Memorable</option>
+</select>
+<br>
+<br>
+2. What do you think about the ongoing shortened school year? (minimum of 1 sentence)
+<input type="textarea" id="ssy" name="ssy" placeholder="I think that..." class="option">
+<br>
+<br>
+3. What is your experience about the lessons this school year?
+<select id="lsy" class="option" name="lsy">
+<br>
+<option value="Traumatizing">Traumatizing</option>
+<option value="Below Average">Below Average</option>
+<option value="Meh">Meh</option>
+<option value="Good">Good</option>
+<option value="Memorable">Memorable</option>
+</select>
+<br>
+<br>
+<br>
+<input type="submit" value="Submit"  onlick="info()" class="dayofbirth">
+<br>
+</form>
+<footer> 
+<p>
+Created by:
+<br>
+Harvey Daniel V. Sta. Maria
+<br>
+(ALL RIGHTS RESERVED FOR CREATOR OF SURVEY AND ALL INFORMATION GATHERED IS HERE BY PROTECTED UNDER R.A. 10173 - DATA PRIVACY ACT OF 2012)
+</p>
+</footer>
+<script>
+
+let mypindot = document.getElementById(pindot);
+
+window.onscroll = function() {
+if (document.body.scrollTop > 20 ||;
+document.documentElement.scrollTop > 20) {
+mypindot.style.display = "block";
+}
+else {
+mypindot.style.display = "none";
+}
+}
+
+function button(){
+document.body.scrollTop=0;
+document.document.scrollTop=0;
+}
+
+function info()
+{
+var pangalan=document.getElementById("pangalan").value;
+
+var seksyon=document.getElementById("seksyon").value;
+
+var kaarawan=document.getElementById("kaarawan").value;
+
+var sy=document.getElementById("sy").value;
+
+var ssy=document.getElementById("ssy").value;
+
+var lsy=document.getElementById("lsy").value;
+
+var pangalan=localStorage.setItem("pangalan", pangalan);
+
+var seksyon=localStorage.setItem("seksyon", seksyon);
+
+var kaarawan=localStorage.setItem("kaarawan", kaarawan);
+
+var sy=localStorage.setItem("sy", sy);
+
+var ssy=localStorage.setItem("ssy", ssy);
+
+var lsy=localStorage.setItem("lsy", lsy);
+</script>
+</center>
+</body>
+</html>
